@@ -1,4 +1,4 @@
-package Inq2.Service;
+package Inq2.service;
 
 public class ProjectApplication {
 }
