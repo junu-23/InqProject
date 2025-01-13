@@ -24,7 +24,6 @@ public class User {
 
 
 
-
     @Column(name = "username", nullable = false, unique = true)
     private String username;
 
