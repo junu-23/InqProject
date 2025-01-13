@@ -22,6 +22,11 @@ public class User {
     @Column(name="id", updatable = false)
     private Long id;
 
+    private Long ids;
+
+
+
+
     @Column(name = "username", nullable = false, unique = true)
     private String username;
 
