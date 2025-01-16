@@ -19,8 +19,16 @@ public class Category {
     private Long id;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "categoryName")
     private CategoryName categoryName;
 
     @OneToMany(mappedBy = "category")
     private List<Study> studies;
+
+    // 기존 생성자에서 접근 제한을 public으로 수정 : 외부에서 사용 가능하게.
+    public Category(CategoryName categoryName, String name) {
+        this.categoryName = categoryName;
+    }
+
+
 }

@@ -1,0 +1,83 @@
+<!--스터디 조회 화면-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스터디 목록</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #5c6bc0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .study-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .study-item {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .study-item:hover {
+            transform: translateY(-5px);
+        }
+        .study-category {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #5c6bc0;
+        }
+        .study-title {
+            font-size: 1.3em;
+            margin: 10px 0;
+            color: #333;
+        }
+        .study-content {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .study-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>스터디 목록</h1>
+
+<div class="container">
+    <ul class="study-list">
+        <th:block th:each="study : ${studies}">
+            <li class="study-item">
+                <div>
+                    <img th:src="${study.image}" alt="Study Image" style="width: 100px; height: auto; float: left; margin-right: 15px;" />
+                </div>
+                <div class="study-category" th:text="${study.category.categoryName}"></div>
+                <div class="study-title" th:text="${study.title}"></div>
+                <div class="study-content" th:text="${study.content}"></div>
+                <div th:text="${#temporals.format(study.createdAt, 'yyyy.MM.dd HH:mm:ss')}"></div>
+
+
+            </li>
+        </th:block>
+    </ul>
+</div>
+
+</body>
+</html>

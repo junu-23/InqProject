@@ -21,8 +21,8 @@ public class Application {
     private Status status;
 
     @ManyToOne
-    @JoinColumn(name= "user_id")
-    private User user;
+    @JoinColumn(name= "siteUser_id")
+    private SiteUser siteUser;
 
     @ManyToOne
     @JoinColumn(name="study_id")

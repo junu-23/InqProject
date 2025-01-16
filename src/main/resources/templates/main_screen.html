@@ -1,0 +1,72 @@
+<!--메인화면-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스터디 생성</title>
+    <style>
+        /* 전역 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* 카테고리 탭 스타일 */
+        #category-tabs {
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #category-tabs a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #category-tabs a:hover {
+            background-color: #0056b3;
+        }
+
+        /* 스터디 생성 버튼 스타일 */
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 카테고리 탭 -->
+<div id="category-tabs">
+    <a href="/category/SCHOOL">School</a>
+    <a href="/category/LANGUAGE">Language</a>
+    <a href="/category/ETC">Etc</a>
+    <a href="/category/CSAT">CSAT</a>
+    <a href="/category/CSE">CSE</a>
+</div>
+
+<!-- 스터디 생성 버튼 -->
+<button onclick="window.location.href='/api/study'">스터디 생성</button>
+
+</body>
+</html>

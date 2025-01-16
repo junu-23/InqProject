@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스터디 생성</title>
+    <style>
+        /* 전역 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* 폼 스타일 */
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="text"],
+        textarea,
+        select,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>스터디를 생성하세요</h1>
+
+<form action="/api/study" method="post" enctype="multipart/form-data">
+    <label for="title">스터디 제목:</label>
+    <input type="text" id="title" name="title" required placeholder="스터디 제목을 입력하세요.">
+
+    <label for="content">스터디 내용:</label>
+    <textarea id="content" name="content" required placeholder="스터디 내용을 입력하세요."></textarea>
+
+    <label for="category">카테고리:</label>
+    <select id="category" name="categoryName" required>
+        <option value="SCHOOL">School</option>
+        <option value="LANGUAGE">Language</option>
+        <option value="ETC">Etc</option>
+        <option value="CSAT">Csat</option>
+        <option value="CSE">Cse</option>
+    </select>
+
+    <label for="image">이미지 업로드:</label>
+    <input type="file" id="image" name="image" accept="image/*">
+
+    <button type="submit">생성</button>
+</form>
+
+</body>
+</html>
